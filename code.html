@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#001e2f",
+          "on-error-container": "#93000a",
+          "tertiary": "#5a4400",
+          "surface-container-lowest": "#ffffff",
+          "surface-variant": "#e0e3e8",
+          "surface-bright": "#f7f9ff",
+          "primary-fixed": "#b1f0ce",
+          "on-background": "#181c20",
+          "on-tertiary-container": "#fcd579",
+          "surface-container-high": "#e5e8ee",
+          "on-primary-fixed-variant": "#0e5138",
+          "outline-variant": "#bfc9c1",
+          "on-primary": "#ffffff",
+          "secondary-fixed-dim": "#a1cced",
+          "surface": "#f7f9ff",
+          "primary-container": "#2d6a4f",
+          "background": "#f7f9ff",
+          "on-secondary-container": "#37627f",
+          "primary-fixed-dim": "#95d4b3",
+          "surface-tint": "#2c694e",
+          "error-container": "#ffdad6",
+          "surface-container-low": "#f1f4f9",
+          "error": "#ba1a1a",
+          "inverse-primary": "#95d4b3",
+          "secondary-container": "#b2dcfe",
+          "on-primary-container": "#a8e7c5",
+          "on-tertiary-fixed-variant": "#5a4400",
+          "secondary-fixed": "#c9e6ff",
+          "on-primary-fixed": "#002114",
+          "inverse-on-surface": "#eef1f6",
+          "surface-dim": "#d7dadf",
+          "on-secondary-fixed-variant": "#1d4b67",
+          "on-surface-variant": "#404943",
+          "inverse-surface": "#2d3135",
+          "tertiary-container": "#775b06",
+          "outline": "#707973",
+          "primary": "#0f5238",
+          "tertiary-fixed-dim": "#e7c268",
+          "on-error": "#ffffff",
+          "surface-container-highest": "#e0e3e8",
+          "surface-container": "#ebeef3",
+          "tertiary-fixed": "#ffdf96",
+          "on-secondary": "#ffffff",
+          "secondary": "#386380",
+          "on-tertiary-fixed": "#251a00",
+          "on-surface": "#181c20",
+          "on-tertiary": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "space-md": "1rem",
+          "gutter-mobile": "1rem",
+          "space-2xl": "3rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "margin": "2rem",
+          "margin-mobile": "1rem"
+        },
+        "fontFamily": {
+          "body-sm": ["Plus Jakarta Sans"],
+          "display": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"],
+          "label-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "display-mobile": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+          "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+          "display-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col"><div class="h-20 px-space-lg flex items-center gap-space-sm border-b border-surface-container-high"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[24px]">delete_sweep</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-primary">SMART<span class="text-secondary font-display font-light">.iot</span></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Centro de Mando</span></div></div><div class="px-space-md py-space-sm"><div class="flex items-center gap-space-xs p-space-sm bg-surface-container-low rounded-lg"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Red Smart: 99.8% Online</span></div></div><nav class="flex-1 px-space-md py-space-sm flex flex-col gap-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px]" data-path="crm-bi-dashboard" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-lg text-label-lg">Telemetría &amp; BI</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px]" data-path="producto-ia" href="#"><span class="material-symbols-outlined text-[22px]">memory</span><span class="font-label-lg text-label-lg">Monitoreo IA</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px]" data-path="mantenimiento-smart-care" href="#"><span class="material-symbols-outlined text-[22px]">build_circle</span><span class="font-label-lg text-label-lg">Smart Care CRM</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px]" data-path="comprar-envio-crm" href="#"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-lg text-label-lg">Flota &amp; Despachos</span></a></nav><div class="p-space-md border-t border-surface-container-high flex flex-col gap-space-sm"><div class="flex items-center justify-between px-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase">Accesibilidad</span><div class="flex items-center gap-space-xs"><button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Contraste WCAG" type="button"><span class="material-symbols-outlined text-[18px]">contrast</span></button><button class="w-8 h-8 flex items-center justify-center rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Tamaño Texto" type="button"><span class="material-symbols-outlined text-[18px]">format_size</span></button></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-20 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Panel de Control Circular</span></div><div class="flex items-center gap-space-md"><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-space-xs" data-path="inicio" href="#"><span class="material-symbols-outlined text-[20px]">arrow_back</span><span>Portal Web</span></a><div class="h-6 w-px bg-surface-container-high"></div><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface" title="Notificaciones" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-20 bg-background min-h-screen px-margin py-space-xl"><div class="flex flex-col w-full gap-space-xl">
+<!-- Top Executive Bar with Actions -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Supervisión Corporativa · v4.8 Telemetry</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Panel Ejecutivo &amp; Inteligencia CRM</h2>
+</div>
+<!-- Action Bar Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="min-h-[48px] px-space-lg rounded-xl bg-surface-container-lowest text-secondary font-label-lg text-label-lg shadow-sm hover:bg-surface-container-high transition-all flex items-center gap-space-xs focus:ring-2 focus:ring-secondary" type="button">
+<span class="material-symbols-outlined text-[20px]">system_update_alt</span>
+<span>Actualizar Firmware OTA</span>
+</button>
+<button class="min-h-[48px] px-space-lg rounded-xl bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container-high transition-all flex items-center gap-space-xs focus:ring-2 focus:ring-primary" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">warning</span>
+<span>Gestionar Alertas IoT</span>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container text-label-sm font-bold ml-1">3</span>
+</button>
+<button class="min-h-[48px] px-space-lg rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary transition-all flex items-center gap-space-xs focus:ring-2 focus:ring-offset-2 focus:ring-primary-container" type="button">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span>Exportar Reporte BI</span>
+</button>
+</div>
+</section>
+<!-- Metric Cards Grid (Key Business Performance) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Unidades Conectadas -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[160px]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Unidades Conectadas</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">sensors</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display text-display text-on-surface">1,420</span>
+<span class="inline-flex items-center text-label-md font-label-md text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[16px] mr-0.5">trending_up</span>+18.4%
+          </span>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Crecimiento mensual activo</span>
+<span class="font-bold text-on-surface">99.8% SLA</span>
+</div>
+</div>
+<!-- Clientes CRM -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[160px]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Clientes Registrados CRM</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">domain</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display text-display text-on-surface">896</span>
+<span class="inline-flex items-center text-label-md font-label-md text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded-md font-semibold">
+            100% validados
+          </span>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Cuentas corporativas y públicas</span>
+<span class="text-primary font-semibold">0 pendientes</span>
+</div>
+</div>
+<!-- Adopción Smart Care -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[160px]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Smart Care (Mantenimiento)</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display text-display text-on-surface">38%</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">540 contratos</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-1.5 rounded-full" style="width: 38%;"></div>
+</div>
+</div>
+<!-- Índice NPS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[160px]">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Índice Satisfacción (NPS)</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">stars</span>
+</div>
+</div>
+<div class="my-space-xs">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-display text-display text-on-surface">92%</span>
+<span class="inline-flex items-center text-label-md font-label-md text-primary font-bold">
+            Excelente
+          </span>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Respuesta técnica media</span>
+<span class="font-bold text-on-surface">&lt;2.4 horas</span>
+</div>
+</div>
+</section>
+<!-- Ecological & AI Precision Telemetry Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- AI YOLO-Edge Telemetry Unit -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Visión Computacional</span>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            YOLO-Edge v8.2
+          </span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-display text-display text-primary">98.7%</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold">precisión global</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Inferencia en micro-controlador con latencia menor a 42ms por elemento clasificado en boca de ingreso.
+        </p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Falsos positivos (contaminación cruzada):</span>
+<span class="font-bold text-on-surface">1.3%</span>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Procesamiento diario promedio:</span>
+<span class="font-bold text-on-surface">34,120 objetos</span>
+</div>
+</div>
+</div>
+<!-- PET Classification Telemetry -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Plástico PET Segregado</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">0.0% Contaminación</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-display text-display text-secondary">412.8</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">Toneladas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Compactado automático con sensor ultrasónico y pesaje piezoeléctrico de alta precisión.
+        </p>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs border-t border-surface-container-high/60">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Ahorro de CO₂ Calculado</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">619.2 tCO₂e</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">eco</span>
+</div>
+</div>
+</div>
+<!-- Organic Compost Stream -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Fracción Orgánica</span>
+</div>
+<span class="text-label-sm font-label-sm font-bold text-on-tertiary-fixed bg-tertiary-fixed px-2 py-0.5 rounded">Bio-compostaje</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-space-sm">
+<span class="font-display text-display text-primary">689.4</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Toneladas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Derivadas con control de olores y desodorización microbiana activa hacia plantas municipales.
+        </p>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs border-t border-surface-container-high/60">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">Generación de Humus Estimado</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">241.3 Ton</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">psychiatry</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CRM Directory & Management Section -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<!-- Header of CRM directory -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Directorio Administrativo de Clientes</h3>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-bold">896 Registros</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Control unificado de flotas, contratos Smart Care y estado de logística.</p>
+</div>
+<!-- Live Search & Interactive Filter Pills -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="relative min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full min-h-[48px] pl-10 pr-space-md bg-surface-container-low rounded-xl text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant/70 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all" id="crmSearchInput" placeholder="Buscar por cliente, ID o dirección..." type="text"/>
+</div>
+<!-- Filter Segment -->
+<div class="inline-flex p-1 bg-surface-container-low rounded-xl" id="filterSegment">
+<button class="filter-btn active min-h-[40px] px-space-md rounded-lg font-label-sm text-label-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm" data-filter="all" type="button">
+            Todos
+          </button>
+<button class="filter-btn min-h-[40px] px-space-md rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-all" data-filter="maintenance" type="button">
+            Con Mantenimiento
+          </button>
+<button class="filter-btn min-h-[40px] px-space-md rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-all" data-filter="transit" type="button">
+            En Tránsito
+          </button>
+<button class="filter-btn min-h-[40px] px-space-md rounded-lg font-label-sm text-label-sm font-semibold text-on-surface-variant hover:text-on-surface transition-all" data-filter="delivered" type="button">
+            Entregado
+          </button>
+</div>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse" id="crmTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase">
+<th class="py-space-md px-space-md rounded-l-lg">ID</th>
+<th class="py-space-md px-space-md">Cliente / Institución</th>
+<th class="py-space-md px-space-md">Contacto Oficial</th>
+<th class="py-space-md px-space-md">Ubicación Operativa</th>
+<th class="py-space-md px-space-md text-center">Unidades</th>
+<th class="py-space-md px-space-md">Logística</th>
+<th class="py-space-md px-space-md">Smart Care CRM</th>
+<th class="py-space-md px-space-md rounded-r-lg text-right">Acciones Rápidas</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/50 font-body-sm text-body-sm">
+<!-- Row 1: GreenMall S.A.C. -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="maintenance delivered">
+<td class="py-space-md px-space-md font-label-md font-semibold text-on-surface-variant">CLI-1042</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed/50 text-primary flex items-center justify-center font-bold font-label-md">
+                  GM
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">GreenMall S.A.C.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Retail Comercial de Alta Concurrencia</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">operaciones@greenmall.pe</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+51 984 210 994</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">pin_drop</span>
+<span class="truncate max-w-[200px]" title="Av. Circunvalación 1420, Surco, Lima">Av. Circunvalación 1420, Lima</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">36 u.</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Entregado y Operativo
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                Plan Enterprise Plus
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container-high transition-colors" title="Contactar" type="button">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container-high transition-colors" title="Ver Telemetría" type="button">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Exportar Ficha" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Hospital Metropolitano -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="maintenance delivered">
+<td class="py-space-md px-space-md font-label-md font-semibold text-on-surface-variant">CLI-1088</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed/60 text-secondary flex items-center justify-center font-bold font-label-md">
+                  HM
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Hospital Metropolitano</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Red de Salud Asistencial</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">biomedica@hospmetropolitano.gob</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+51 972 553 102</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">pin_drop</span>
+<span class="truncate max-w-[200px]" title="Av. Brasil 2200, Jesús María, Lima">Av. Brasil 2200, Lima</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">52 u.</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Entregado y Operativo
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                Plan Hospital Care 24/7
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container-high transition-colors" title="Contactar" type="button">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container-high transition-colors" title="Ver Telemetría" type="button">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Exportar Ficha" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Municipalidad de Miraflores -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="transit">
+<td class="py-space-md px-space-md font-label-md font-semibold text-on-surface-variant">CLI-1150</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold font-label-md">
+                  MM
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Municipalidad de Miraflores</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Gestión Pública y Espacio Urbano</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">sostenibilidad@miraflores.gob.pe</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+51 940 338 901</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">pin_drop</span>
+<span class="truncate max-w-[200px]" title="Malecón de la Reserva 610, Miraflores">Malecón de la Reserva, Lima</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">110 u.</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                En Tránsito (Flota #04)
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                Garantía Base (En Negociación)
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container-high transition-colors" title="Contactar" type="button">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container-high transition-colors" title="Ver Telemetría" type="button">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Exportar Ficha" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Univ. Tecnológica -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group" data-category="maintenance delivered">
+<td class="py-space-md px-space-md font-label-md font-semibold text-on-surface-variant">CLI-1205</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center font-bold font-label-md">
+                  UT
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[16px] text-on-surface font-semibold">Univ. Tecnológica</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Campus Universitario Central</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">infraestructura@utec-campus.edu</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+51 961 882 431</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">pin_drop</span>
+<span class="truncate max-w-[200px]" title="Jr. Medrano Silva 165, Barranco, Lima">Jr. Medrano Silva 165, Lima</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="font-headline-sm text-[15px] font-bold text-on-surface">24 u.</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Entregado y Operativo
+              </span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                Smart Care Campus Tier 1
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container-high transition-colors" title="Contactar" type="button">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container-high transition-colors" title="Ver Telemetría" type="button">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Exportar Ficha" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Telemetry Summary -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-sm">
+<span>Mostrando 4 de 896 instituciones auditadas</span>
+<span class="w-1 h-1 rounded-full bg-surface-container-high"></span>
+<span class="text-primary font-medium">Sincronización en vivo vía MQTT • SSL/TLS</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md min-h-[36px] rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high disabled:opacity-50" disabled="" type="button">
+          Anterior
+        </button>
+<span class="px-3 py-1 font-bold text-on-surface">Página 1 de 224</span>
+<button class="px-space-md min-h-[36px] rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high" type="button">
+          Siguiente
+        </button>
+</div>
+</div>
+</section>
+<!-- Dual Bottom Insight Panels -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+<!-- Log de Disparos de Telemetría Recientes -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">history</span>
+<h4 class="font-headline-sm text-[18px] text-on-surface font-bold">Actividad Reciente del Hub IoT</h4>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span> En Línea
+          </span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">compress</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Ciclo de Compactación Completado (Bin #M-084)</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">GreenMall S.A.C. · Reducción de volumen 4.2x</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hace 3 min</span>
+</div>
+<div class="flex items-start justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">sync</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Firma de Telemetría Biométrica Verificada</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Hospital Metropolitano · Desinfección UV-C finalizada</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hace 11 min</span>
+</div>
+<div class="flex items-start justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">local_shipping</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Despacho de Contenedores en Destino</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Municipalidad de Miraflores · Arribo de 20 Smart Bins</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hace 28 min</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between">
+<a class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1" href="#">
+<span>Ver log completo de eventos</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Retención de datos: 90 días</span>
+</div>
+</div>
+<!-- Smart Care SLA & Health Status -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[22px]">health_and_safety</span>
+<h4 class="font-headline-sm text-[18px] text-on-surface font-bold">Resumen Operativo Smart Care</h4>
+</div>
+<span class="bg-primary-fixed/40 text-on-primary-fixed-variant px-space-sm py-0.5 rounded font-label-sm text-label-sm font-bold">
+            SLA Cumplido 99.4%
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm mb-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mantenimientos Preventivos</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold mt-1">142</span>
+<span class="font-label-sm text-label-sm text-primary font-medium mt-1">Ejecutados este mes</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Alertas Críticas Activas</span>
+<span class="font-headline-md text-headline-md text-error font-bold mt-1">0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1">Sin incidencias bloqueantes</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Capacidad de respuesta de cuadrilla en campo</span>
+<span class="font-bold text-on-surface">1h 48m prom.</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-2 rounded-full" style="width: 86%;"></div>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between">
+<button class="min-h-[44px] px-space-md rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md font-semibold flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">build</span>
+<span>Programar Mantenimiento Masivo</span>
+</button>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Técnicos certificados: 18</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Filter & Search Live Engine for CRM Directory
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('crmSearchInput');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('#crmTable tbody tr');
+
+    let currentFilter = 'all';
+
+    function updateTable() {
+      const query = (searchInput?.value || '').toLowerCase().trim();
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const category = row.getAttribute('data-category') || '';
+
+        const matchesQuery = text.includes(query);
+        const matchesFilter = currentFilter === 'all' || category.includes(currentFilter);
+
+        if (matchesQuery && matchesFilter) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput?.addEventListener('input', updateTable);
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+
+        btn.classList.remove('text-on-surface-variant');
+        btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+
+        currentFilter = btn.getAttribute('data-filter') || 'all';
+        updateTable();
+      });
+    });
+  });
+</script></main></div></body></html>
